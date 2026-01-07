@@ -146,6 +146,47 @@
             color: rgba(255, 255, 255, 0.9);
         }
         
+        .hero-btns {
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 0.8rem 1.5rem;
+            border-radius: 5px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary {
+            background-color: var(--secondary-color);
+            color: var(--dark-color);
+            border: none;
+        }
+        
+        .btn-primary:hover {
+            background-color: #e0a000;
+            color: var(--dark-color);
+            transform: translateY(-3px);
+        }
+        
+        .btn-outline {
+            background-color: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .btn-outline:hover {
+            background-color: white;
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
         .contact-info {
             display: flex;
             justify-content: center;
@@ -182,10 +223,20 @@
             align-items: center;
         }
         
+        .profile-img-container {
+            position: relative;
+            width: 100%;
+        }
+        
         .profile-img {
             width: 100%;
+            max-width: 400px;
+            height: 400px;
+            object-fit: cover;
             border-radius: 10px;
             box-shadow: var(--shadow);
+            display: block;
+            margin: 0 auto;
         }
         
         /* Skills Section */
@@ -393,6 +444,11 @@
                 grid-template-columns: 1fr;
             }
             
+            .profile-img {
+                max-width: 350px;
+                height: 350px;
+            }
+            
             .timeline::after {
                 left: 31px;
             }
@@ -454,6 +510,22 @@
             section {
                 padding: 3rem 0;
             }
+            
+            .profile-img {
+                max-width: 300px;
+                height: 300px;
+            }
+            
+            .hero-btns {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .btn {
+                width: 100%;
+                max-width: 250px;
+                text-align: center;
+            }
         }
     </style>
 </head>
@@ -485,6 +557,16 @@
             <div class="hero-content">
                 <h1>Venkata Umamaheswari Grandhi</h1>
                 <p>Aspiring Cloud Engineer with a strong foundation in Cloud Services, monitoring, troubleshooting, and automation. Skilled in cloud infrastructure deployment and system administration.</p>
+                
+                <div class="hero-btns">
+                    <a href="https://github.com/UmamaheswariG-Cloud/Portfolio/blob/main/Umamaheswari_AWS_Devops_Resume%20(1).pdf" target="_blank" class="btn btn-primary">
+                        <i class="fas fa-download"></i> Download Resume
+                    </a>
+                    <a href="#contact" class="btn btn-outline">
+                        <i class="fas fa-envelope"></i> Contact Me
+                    </a>
+                </div>
+                
                 <div class="contact-info">
                     <div class="contact-item">
                         <i class="fas fa-phone"></i>
@@ -512,9 +594,15 @@
                     <p>An Aspiring Cloud Engineer with a strong foundation in Cloud Services, monitoring, troubleshooting, and automation. Skilled in cloud infrastructure deployment and system administration.</p>
                     <p>Interested in contributing to innovative cloud solutions in a growth-oriented organization. Currently pursuing B.Tech in Computer Science and Engineering with a focus on cloud technologies and DevOps practices.</p>
                     <p>Passionate about building scalable, secure, and cost-effective cloud solutions using AWS services and infrastructure-as-code tools like Terraform.</p>
+                    
+                    <div class="hero-btns" style="justify-content: flex-start; margin-top: 2rem;">
+                        <a href="https://github.com/UmamaheswariG-Cloud/Portfolio/blob/main/Umamaheswari_AWS_Devops_Resume%20(1).pdf" target="_blank" class="btn btn-primary">
+                            <i class="fas fa-file-pdf"></i> View Full Resume
+                        </a>
+                    </div>
                 </div>
-                <div>
-                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Cloud Engineering" class="profile-img">
+                <div class="profile-img-container">
+                    <img src="https://raw.githubusercontent.com/UmamaheswariG-Cloud/Portfolio/main/linkdlin%20pic.jpg" alt="Umamaheswari Grandhi" class="profile-img">
                 </div>
             </div>
         </div>
@@ -711,6 +799,36 @@
         </div>
     </section>
 
+    <!-- Contact Section -->
+    <section id="contact" class="contact">
+        <div class="container">
+            <h2 class="section-title">Get In Touch</h2>
+            <div style="text-align: center; max-width: 800px; margin: 0 auto;">
+                <p style="font-size: 1.1rem; margin-bottom: 2rem;">I'm actively seeking opportunities in Cloud Engineering and DevOps. Feel free to reach out if you have any questions or would like to discuss potential collaborations.</p>
+                
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 9381777023</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>umamaheswarigrandhi07@gmail.com</span>
+                    </div>
+                </div>
+                
+                <div class="hero-btns" style="margin-top: 2rem;">
+                    <a href="https://github.com/UmamaheswariG-Cloud/Portfolio/blob/main/Umamaheswari_AWS_Devops_Resume%20(1).pdf" target="_blank" class="btn btn-primary">
+                        <i class="fas fa-download"></i> Download Resume
+                    </a>
+                    <a href="mailto:umamaheswarigrandhi07@gmail.com" class="btn btn-outline" style="color: var(--dark-color); border-color: var(--dark-color);">
+                        <i class="fas fa-paper-plane"></i> Send Email
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer>
         <div class="container">
@@ -720,9 +838,12 @@
                 <div class="social-links">
                     <a href="mailto:umamaheswarigrandhi07@gmail.com"><i class="fas fa-envelope"></i></a>
                     <a href="#"><i class="fab fa-linkedin"></i></a>
-                    <a href="#"><i class="fab fa-github"></i></a>
+                    <a href="https://github.com/UmamaheswariG-Cloud" target="_blank"><i class="fab fa-github"></i></a>
                 </div>
                 <p class="copyright">&copy; 2023 Umamaheswari Grandhi. All rights reserved.</p>
+                <p class="copyright" style="font-size: 0.9rem; margin-top: 0.5rem;">
+                    <a href="https://github.com/UmamaheswariG-Cloud/Portfolio/blob/main/Umamaheswari_AWS_Devops_Resume%20(1).pdf" target="_blank" style="color: rgba(255, 255, 255, 0.7);">View Resume</a>
+                </p>
             </div>
         </div>
     </footer>
