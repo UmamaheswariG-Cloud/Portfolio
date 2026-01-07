@@ -2,107 +2,767 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Umamaheswari | Cloud & DevOps Engineer</title>
-    <link rel="stylesheet" href="style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Umamaheswari Grandhi - AWS DevOps Engineer</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            --primary-color: #2d5c8a;
+            --secondary-color: #f0b429;
+            --dark-color: #333;
+            --light-color: #f4f4f4;
+            --gray-color: #777;
+            --shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        body {
+            font-family: 'Roboto', sans-serif;
+            line-height: 1.6;
+            color: var(--dark-color);
+            background-color: #fff;
+        }
+        
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+        }
+        
+        h2 {
+            font-size: 2rem;
+            color: var(--primary-color);
+            border-bottom: 3px solid var(--secondary-color);
+            padding-bottom: 0.5rem;
+            display: inline-block;
+            margin-bottom: 2rem;
+        }
+        
+        h3 {
+            font-size: 1.5rem;
+            color: var(--dark-color);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        a {
+            text-decoration: none;
+            color: var(--primary-color);
+            transition: all 0.3s ease;
+        }
+        
+        a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        /* Header & Navigation */
+        header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 1rem 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: var(--shadow);
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: white;
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+        
+        .nav-links li {
+            margin-left: 2rem;
+        }
+        
+        .nav-links a {
+            color: white;
+            font-weight: 500;
+        }
+        
+        .nav-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .menu-toggle {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(45, 92, 138, 0.9), rgba(45, 92, 138, 0.8)), url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1200&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            padding: 5rem 0;
+            text-align: center;
+        }
+        
+        .hero-content h1 {
+            color: white;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-content p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 2rem;
+            color: rgba(255, 255, 255, 0.9);
+        }
+        
+        .contact-info {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .contact-item i {
+            color: var(--secondary-color);
+        }
+        
+        /* Sections */
+        section {
+            padding: 5rem 0;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        /* About Section */
+        .about-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        .profile-img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        /* Skills Section */
+        .skills-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .skill-category {
+            background-color: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .skill-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+        
+        .skill-tag {
+            background-color: var(--light-color);
+            padding: 0.5rem 1rem;
+            border-radius: 50px;
+            font-weight: 500;
+            color: var(--dark-color);
+        }
+        
+        .skill-tag.cloud {
+            background-color: #ff990033;
+            color: #ff9900;
+        }
+        
+        .skill-tag.devops {
+            background-color: #0073b133;
+            color: #0073b1;
+        }
+        
+        /* Projects Section */
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 2rem;
+        }
+        
+        .project-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+        
+        .project-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .project-img {
+            height: 200px;
+            background-color: var(--primary-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 3rem;
+        }
+        
+        .project-content {
+            padding: 1.5rem;
+        }
+        
+        .project-tech {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin: 1rem 0;
+        }
+        
+        .tech-tag {
+            background-color: var(--light-color);
+            padding: 0.3rem 0.8rem;
+            border-radius: 5px;
+            font-size: 0.9rem;
+        }
+        
+        /* Timeline for Education & Experience */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 6px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -3px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+        }
+        
+        .timeline-item::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background-color: white;
+            border: 4px solid var(--primary-color);
+            border-radius: 50%;
+            top: 15px;
+            right: -13px;
+            z-index: 1;
+        }
+        
+        .timeline-item:nth-child(even)::after {
+            left: -13px;
+        }
+        
+        /* Certifications & Achievements */
+        .certs-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 2rem;
+        }
+        
+        .cert-card {
+            background-color: white;
+            padding: 1.5rem;
+            border-radius: 10px;
+            box-shadow: var(--shadow);
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .cert-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 3rem 0;
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        
+        .social-links {
+            display: flex;
+            gap: 1.5rem;
+            margin: 1.5rem 0;
+        }
+        
+        .social-links a {
+            color: white;
+            font-size: 1.5rem;
+        }
+        
+        .social-links a:hover {
+            color: var(--secondary-color);
+        }
+        
+        .copyright {
+            margin-top: 1rem;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .about-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline::after {
+                left: 31px;
+            }
+            
+            .timeline-item {
+                width: 100%;
+                padding-left: 70px;
+                padding-right: 25px;
+            }
+            
+            .timeline-item:nth-child(even) {
+                left: 0;
+            }
+            
+            .timeline-item::after {
+                left: 21px;
+            }
+            
+            .timeline-item:nth-child(even)::after {
+                left: 21px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-links {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background-color: var(--primary-color);
+                flex-direction: column;
+                align-items: center;
+                justify-content: flex-start;
+                padding-top: 2rem;
+                transition: left 0.3s ease;
+            }
+            
+            .nav-links.active {
+                left: 0;
+            }
+            
+            .nav-links li {
+                margin: 1rem 0;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+            
+            section {
+                padding: 3rem 0;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Header & Navigation -->
+    <header>
+        <div class="container">
+            <nav class="navbar">
+                <div class="logo">UG</div>
+                <ul class="nav-links">
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#skills">Skills</a></li>
+                    <li><a href="#projects">Projects</a></li>
+                    <li><a href="#education">Education</a></li>
+                    <li><a href="#experience">Experience</a></li>
+                    <li><a href="#certifications">Certifications</a></li>
+                </ul>
+                <div class="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+            </nav>
+        </div>
+    </header>
 
-<header>
-    <h1>Venkata Umamaheswari Grandhi</h1>
-    <p>Aspiring Cloud & DevOps Engineer</p>
-    <div class="contact">
-        <a href="mailto:umamaheswarigrandhi07@gmail.com">Email</a>
-        <a href="https://www.linkedin.com" target="_blank">LinkedIn</a>
-        <a href="tel:+919381777023">Call</a>
-    </div>
-</header>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <h1>Venkata Umamaheswari Grandhi</h1>
+                <p>Aspiring Cloud Engineer with a strong foundation in Cloud Services, monitoring, troubleshooting, and automation. Skilled in cloud infrastructure deployment and system administration.</p>
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <i class="fas fa-phone"></i>
+                        <span>+91 9381777023</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <span>umamaheswarigrandhi07@gmail.com</span>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-linkedin"></i>
+                        <span>LinkedIn Profile</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section>
-    <h2>Profile Summary</h2>
-    <p>
-        An aspiring Cloud Engineer with a strong foundation in AWS cloud services,
-        monitoring, troubleshooting, and automation. Skilled in deploying cloud
-        infrastructure and system administration, with a passion for building
-        scalable and secure cloud solutions.
-    </p>
-</section>
+    <!-- About Section -->
+    <section id="about" class="about">
+        <div class="container">
+            <h2 class="section-title">Profile Summary</h2>
+            <div class="about-content">
+                <div>
+                    <p>An Aspiring Cloud Engineer with a strong foundation in Cloud Services, monitoring, troubleshooting, and automation. Skilled in cloud infrastructure deployment and system administration.</p>
+                    <p>Interested in contributing to innovative cloud solutions in a growth-oriented organization. Currently pursuing B.Tech in Computer Science and Engineering with a focus on cloud technologies and DevOps practices.</p>
+                    <p>Passionate about building scalable, secure, and cost-effective cloud solutions using AWS services and infrastructure-as-code tools like Terraform.</p>
+                </div>
+                <div>
+                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80" alt="Cloud Engineering" class="profile-img">
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section>
-    <h2>Education</h2>
-    <ul>
-        <li><strong>B.Tech – CSE (AI)</strong> | 2021 – 2025 | CGPA: 7.59</li>
-        <li><strong>Intermediate (MPC)</strong> | 2019 – 2021 | CGPA: 6.71</li>
-        <li><strong>SSC</strong> | 2018 – 2019 | CGPA: 9.5</li>
-    </ul>
-</section>
+    <!-- Skills Section -->
+    <section id="skills" class="skills">
+        <div class="container">
+            <h2 class="section-title">Technical Skills</h2>
+            <div class="skills-container">
+                <div class="skill-category">
+                    <h3>Cloud Platforms</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag cloud">AWS</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>DevOps Tools</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag devops">Terraform</span>
+                        <span class="skill-tag devops">Docker</span>
+                        <span class="skill-tag devops">Git</span>
+                        <span class="skill-tag devops">Kubernetes</span>
+                        <span class="skill-tag devops">CI/CD</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Operating Systems</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Linux</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Scripting & Programming</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Python</span>
+                    </div>
+                </div>
+                <div class="skill-category">
+                    <h3>Soft Skills</h3>
+                    <div class="skill-list">
+                        <span class="skill-tag">Teamwork</span>
+                        <span class="skill-tag">Problem-Solving</span>
+                        <span class="skill-tag">Adaptability</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section>
-    <h2>Technical Skills</h2>
-    <div class="skills">
-        <span>AWS</span>
-        <span>Terraform</span>
-        <span>Docker</span>
-        <span>Kubernetes</span>
-        <span>Git</span>
-        <span>CI/CD</span>
-        <span>Linux</span>
-        <span>Python</span>
-    </div>
-</section>
+    <!-- Projects Section -->
+    <section id="projects" class="projects">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-plane"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Airline Ticket Booking System on AWS</h3>
+                        <p>Built a serverless airline booking system with flight search, booking, and automated notifications using AWS services.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">AWS S3</span>
+                            <span class="tech-tag">CloudFront</span>
+                            <span class="tech-tag">Route 53</span>
+                            <span class="tech-tag">API Gateway</span>
+                            <span class="tech-tag">Lambda</span>
+                            <span class="tech-tag">DynamoDB</span>
+                            <span class="tech-tag">SES</span>
+                            <span class="tech-tag">SNS</span>
+                            <span class="tech-tag">ACM</span>
+                        </div>
+                        <ul>
+                            <li>Built a serverless airline booking system with flight search, booking, and automated notifications.</li>
+                            <li>Configured AWS services for booking, notifications, and secure domain integration.</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="project-card">
+                    <div class="project-img">
+                        <i class="fas fa-cloud"></i>
+                    </div>
+                    <div class="project-content">
+                        <h3>Hybrid Cloud Connectivity between AWS and Azure</h3>
+                        <p>Configured secure VPC-VNet connectivity for cross-cloud workloads between AWS and Azure.</p>
+                        <div class="project-tech">
+                            <span class="tech-tag">Site-to-Site VPN</span>
+                            <span class="tech-tag">Azure VNet</span>
+                            <span class="tech-tag">NSG</span>
+                        </div>
+                        <ul>
+                            <li>Configured secure VPC–VNet connectivity for cross-cloud workloads.</li>
+                            <li>Managed routing and VPN tunnels for seamless communication.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section>
-    <h2>Projects</h2>
+    <!-- Education Section -->
+    <section id="education" class="education">
+        <div class="container">
+            <h2 class="section-title">Education</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>B.Tech - CSE(AI)</h3>
+                        <p class="timeline-date">2021 – 2025</p>
+                        <p>CGPA: 7.59/10</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Intermediate - M.P.C</h3>
+                        <p class="timeline-date">2019 – 2021</p>
+                        <p>Score: 6.71/10</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>SSC</h3>
+                        <p class="timeline-date">2018 – 2019</p>
+                        <p>Score: 9.5/10</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="project">
-        <h3>Airline Ticket Booking System on AWS</h3>
-        <p><strong>Technologies:</strong> S3, CloudFront, Route 53, API Gateway, Lambda, DynamoDB, SES, SNS, ACM</p>
-        <ul>
-            <li>Developed a serverless airline booking system with flight search and booking.</li>
-            <li>Implemented automated email and SMS notifications.</li>
-            <li>Configured secure domain and HTTPS using ACM.</li>
-        </ul>
-    </div>
+    <!-- Experience Section -->
+    <section id="experience" class="experience">
+        <div class="container">
+            <h2 class="section-title">Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-content">
+                        <h3>Machine Learning Intern</h3>
+                        <p class="timeline-date">June 19 – July 12, 2023</p>
+                        <p>Machine Learning with Data Science using Python</p>
+                        <ul>
+                            <li>Worked with dataset preprocessing, visualization, and model development using Pandas, NumPy, Matplotlib.</li>
+                            <li>Built models for Regression, Classification, and Clustering tasks.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="project">
-        <h3>Hybrid Cloud Connectivity (AWS & Azure)</h3>
-        <p><strong>Technologies:</strong> AWS VPC, Azure VNet, Site-to-Site VPN, NSG</p>
-        <ul>
-            <li>Established secure connectivity between AWS and Azure.</li>
-            <li>Configured routing and VPN tunnels for cross-cloud workloads.</li>
-        </ul>
-    </div>
-</section>
+    <!-- Certifications & Achievements -->
+    <section id="certifications" class="certifications">
+        <div class="container">
+            <h2 class="section-title">Certifications & Achievements</h2>
+            <div class="certs-grid">
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fab fa-aws"></i>
+                    </div>
+                    <div>
+                        <h3>AWS Cloud Virtual Internship</h3>
+                        <p>From APSCHE EduSkills</p>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fab fa-python"></i>
+                    </div>
+                    <div>
+                        <h3>Python Programming</h3>
+                        <p>Cisco Networking Academy</p>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-award"></i>
+                    </div>
+                    <div>
+                        <h3>Silver Certificate in Python</h3>
+                        <p>From NPTEL</p>
+                    </div>
+                </div>
+                <div class="cert-card">
+                    <div class="cert-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div>
+                        <h3>Winner – Quiz Competitions</h3>
+                        <p>College Level</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<section>
-    <h2>Internship</h2>
-    <p><strong>Machine Learning with Data Science using Python</strong></p>
-    <p>June 19 – July 12, 2023 | Machine Learning Intern</p>
-    <ul>
-        <li>Performed data preprocessing and visualization using Pandas and NumPy.</li>
-        <li>Built regression, classification, and clustering models.</li>
-    </ul>
-</section>
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <h3>Venkata Umamaheswari Grandhi</h3>
+                <p>Aspiring Cloud & DevOps Engineer</p>
+                <div class="social-links">
+                    <a href="mailto:umamaheswarigrandhi07@gmail.com"><i class="fas fa-envelope"></i></a>
+                    <a href="#"><i class="fab fa-linkedin"></i></a>
+                    <a href="#"><i class="fab fa-github"></i></a>
+                </div>
+                <p class="copyright">&copy; 2023 Umamaheswari Grandhi. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
 
-<section>
-    <h2>Certifications</h2>
-    <ul>
-        <li>AWS Cloud Virtual Internship – APSCHE / EduSkills</li>
-        <li>Python Programming – Cisco Networking Academy</li>
-        <li>Silver Certificate in Python – NPTEL</li>
-    </ul>
-</section>
-
-<section>
-    <h2>Achievements</h2>
-    <ul>
-        <li>Winner in college-level quiz competitions</li>
-    </ul>
-</section>
-
-<footer>
-    <p>© 2026 Umamaheswari Grandhi | Cloud & DevOps Portfolio</p>
-</footer>
-
+    <!-- JavaScript for mobile menu toggle -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('.nav-links');
+            
+            menuToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('active');
+            });
+            
+            // Close mobile menu when clicking on a link
+            const navItems = document.querySelectorAll('.nav-links a');
+            navItems.forEach(item => {
+                item.addEventListener('click', function() {
+                    navLinks.classList.remove('active');
+                });
+            });
+            
+            // Smooth scrolling for anchor links
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if(targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if(targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
